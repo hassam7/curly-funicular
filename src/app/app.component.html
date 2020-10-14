@@ -1,0 +1,21 @@
+<nz-layout>
+  <nz-header>
+    <div class="name">
+      <h1>
+        <a routerLink="/">Videos</a>
+      </h1>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item nzSelected>Home</li>
+      <li nz-menu-item nzDisabled>About Us</li>
+      <li nz-menu-item nzDisabled>Faq</li>
+    </ul>
+    <button nz-button nzType="primary" routerLink="/add-video">Add Video</button>
+  </nz-header>
+  <nz-content>
+    <div class="inner-content">
+      <router-outlet>
+      </router-outlet>
+    </div>
+  </nz-content>
+</nz-layout>

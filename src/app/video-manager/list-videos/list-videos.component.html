@@ -1,0 +1,35 @@
+<h1>VManager Demo v0.0.1</h1>
+<div class="search-container">
+  <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+    <input type="text" [(ngModel)]="searchTerm" (keydown.enter)="performSearch()" nz-input placeholder="Search" />
+  </nz-input-group>
+  <ng-template #suffixButton>
+    <button nz-button nzType="primary" nzSize="large" nzSearch (click)="performSearch()">Search</button>
+  </ng-template>
+</div>
+<nz-table class="table" #videoTable [nzData]="videosList" [nzNoResult]="'No Results Found'" [nzLoading]="isLoading">
+  <thead>
+    <tr>
+      <th>Video Name</th>
+      <th>Author</th>
+      <th>Category Name</th>
+      <th>Highest Quality Format</th>
+      <th>Release Date</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let video of videoTable.data">
+      <td>{{video.name}}</td>
+      <td>{{video.authorDetails.name}}</td>
+      <td>{{video.videoCategories}}</td>
+      <td>{{video.formats.size | fileSize}} {{video.formats.res}}</td>
+      <td>{{video.releaseDate | date: dateFormat}}</td>
+      <td>
+        <a>Edit</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button nzType="default" nzDanger (click)="deleteVideo(video)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

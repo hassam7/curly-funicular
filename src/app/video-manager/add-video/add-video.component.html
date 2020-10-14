@@ -1,0 +1,30 @@
+<h1>Add Video</h1>
+<nz-divider></nz-divider>
+<form nz-form>
+  <nz-form-item>
+    <nz-form-label nzFor="video-name">Video Name</nz-form-label>
+    <nz-form-control>
+      <input nz-input name="video-name" type="text" id="video-name">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="video-author">Video Author</nz-form-label>
+    <nz-form-control>
+      <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Video Author">
+        <nz-option *ngFor="let author of videoAuthors" [nzLabel]="author" [nzValue]="author"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="video-author">Video Author</nz-form-label>
+    <nz-form-control>
+      <nz-select [nzMaxTagCount]="3" [nzMaxTagPlaceholder]="tagPlaceHolder" nzMode="multiple"
+        nzPlaceHolder="Please select">
+        <nz-option *ngFor="let item of categories" [nzLabel]="item" [nzValue]="item"></nz-option>
+      </nz-select>
+      <ng-template #tagPlaceHolder let-selectedList> and {{ selectedList.length }} more selected </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button [nzType]="'primary'">Submit</button>
+</form>

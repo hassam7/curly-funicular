@@ -1,0 +1,38 @@
+nz-header {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+  h1 a {
+    color: white;
+  }
+}
+
+[nz-menu] {
+  line-height: 64px;
+  margin-left: 40px;
+}
+
+[nz-button] {
+  margin-left: auto;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+nz-content {
+  padding: 0 50px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}
